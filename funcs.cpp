@@ -39,7 +39,7 @@ int countPrimes(int a, int b){
     int count = 0;
     for(int x = a; x <= b; x++){
         if(isPrime(x))
-            count++
+            count++;
     }
     return count;
 }
@@ -57,7 +57,7 @@ bool isTwinPrime(int n){
 //Task F
 int nextTwinPrime(int n){
     int next = n + 1;
-    bool validNextTwinPrime = false;
+    bool validTwinNextPrime = false;
     while(!validTwinNextPrime){
         if(isTwinPrime(next))
             validTwinNextPrime=isTwinPrime(next);
@@ -86,6 +86,6 @@ int largestTwinPrime(int a, int b){
             }
         }
     }
-    
+
     return largest;
 }
