@@ -4,7 +4,7 @@
 // add functions here
 //Task A
 bool isDivisibleBy(int n, int d){
-    if(n % d == 0)
+    if(d != 0 && n % d == 0)
         return true;
     else
         return false;
@@ -12,12 +12,16 @@ bool isDivisibleBy(int n, int d){
 
 //Task B
 bool isPrime(int n){
-    for(int x = 2; x < n; x++){
-        if(n % x == 0){
-            return false;
+    if(n > 1){
+        for(int x = 2; x < n; x++){
+            if(n % x == 0){
+                return false;
+            }
         }
+        return true;
     }
-    return true;
+    else
+        return false;
 }
 
 //Task C
@@ -46,10 +50,14 @@ int countPrimes(int a, int b){
 
 //Task E
 bool isTwinPrime(int n){
-    bool low = isPrime(n - 2);
-    bool high = isPrime(n + 2);
-    if(low || high)
-        return true;
+    if(isPrime(n)){
+        bool low = isPrime(n - 2);
+        bool high = isPrime(n + 2);
+        if(low || high)
+            return true;
+        else
+            return false;
+    }
     else
         return false;
 }
